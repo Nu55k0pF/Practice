@@ -16,6 +16,6 @@ name = str(input('Give me your name: '))
 age = int(input('Give me your Age: '))
 number = int(input('Give me a randome number: '))
 year = 2023
-onehundret = year + (100 - age)
+onehundred = year + (100 - age)
 
-print(number * 'Hello {}, you will turn 100 years old in the year {}\n'.format(name, onehundret))
+print(number * 'Hello {}, you will turn 100 years old in the year {}\n'.format(name, onehundred))
