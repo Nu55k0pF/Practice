@@ -13,9 +13,9 @@ int main(){
     cin >> uinput;
 
     for (string::reverse_iterator rit=uinput.rbegin(); rit!=uinput.rend(); ++rit){
-        // rinput.append(rit);
-        cout << *rit;
-
+        cout << *rit; //TODO: convert rit to char
+        
+        // rinput.append(*rit);
     }
     // compare returns an int. If the strings are equal compare will return 0
     // if (uinput.compare(reverse_input) == 0){
