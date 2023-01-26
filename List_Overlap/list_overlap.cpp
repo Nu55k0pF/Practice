@@ -30,15 +30,11 @@ vector <int> a = {1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89};
 vector <int> b = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 vector <int> c;
 
-
 // Start of Program
 
     for (int number_from_a : a){
         for (int number_from_b: b){
-            if (any_of(c.begin(), c.end(), compare(number_from_a))){
-                continue;
-            }
-            else if (number_from_a == number_from_b){
+            if (number_from_a == number_from_b){
                 c.push_back(number_from_a);
                 cout << number_from_a << endl;
                 }
