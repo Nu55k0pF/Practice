@@ -12,6 +12,12 @@ int main(){
     cout << "Write a palindrome:\n";
     cin >> uinput;
 
+
+    /*
+    rinput = reverse(uinput.begin(), uinput.end())
+    */
+
+
     for (string::reverse_iterator rit=uinput.rbegin(); rit!=uinput.rend(); ++rit){
         cout << *rit; //TODO: convert rit to char
         
