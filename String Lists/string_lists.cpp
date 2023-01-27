@@ -1,5 +1,14 @@
+/*
+Exercise 6
+
+Ask the user for a string and print out whether this string is a palindrome or not.
+(A palindrome is a string that reads the same forwards and backwards.)
+*/
+
+
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -11,24 +20,18 @@ int main(){
 
     cout << "Write a palindrome:\n";
     cin >> uinput;
+    
+    // copy the userinput and then revers rinput in place.
+    rinput = uinput;
+    reverse(rinput.begin(), rinput.end());
 
-
-    /*
-    rinput = reverse(uinput.begin(), uinput.end())
-    */
-
-
-    for (string::reverse_iterator rit=uinput.rbegin(); rit!=uinput.rend(); ++rit){
-        cout << *rit; //TODO: convert rit to char
-        
-        // rinput.append(*rit);
+    // check if the string is equal to its reversed version.
+    if (rinput == uinput){
+        cout << uinput << " is a palindrome" << endl;
     }
-    // compare returns an int. If the strings are equal compare will return 0
-    // if (uinput.compare(reverse_input) == 0){
-    //     cout << uinput + " is a palindrome.";
-    // }
-    // else {
-    //     cout << uinput + " is not a palindrome.";
-    // }
+    else{
+        cout << uinput << " is not a palindrome" << endl;
+    }
+    
     return 0;
 }
