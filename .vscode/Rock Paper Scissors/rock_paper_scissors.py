@@ -12,18 +12,6 @@ Remember the rules:
     Paper beats rock
 '''
 
-'''
-rock = 1, paper = 2, scissors = 3
-paper 2 beats - rock 1 = 1
-scissors 3 beats - paper 2 = 1
-rock 1 - beats scissors 3 = -1 
-
-If the numbers are consecutive and thier distance is 1 then the bigger number wins. 
-If the numbers are not consecutive then the smaller number wins
-
-'''
-
-
 # Modules
 
 def get_player_input():
@@ -33,10 +21,18 @@ def get_player_input():
     else:
         print('Not a valid coice. Please choose between "play" or "exit".')
         get_player_input()
-        
 
 # Declare variables
 
+'''
+rock = 1, paper = 2, scissors = 3
+paper 2 beats - rock 1 = 1
+scissors 3 beats - paper 2 = 1
+rock 1 - beats scissors 3 = -1 
+
+If the numbers are consecutive and thier distance is 1 then the bigger number wins. 
+If the numbers are not consecutive then the smaller number wins
+'''
 rps = {
     'rock' : 1,
     'paper' : 2,
