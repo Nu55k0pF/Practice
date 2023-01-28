@@ -14,13 +14,13 @@ Remember the rules:
 
 # Modules
 
-def get_player_input():
+def check_game_end():
     player_input = input()
     if player_input == 'play' or player_input ==  'exit':
         return player_input
     else:
         print('Not a valid coice. Please choose between "play" or "exit".')
-        get_player_input()
+        check_game_end()
 
 # Declare variables
 
@@ -88,7 +88,7 @@ while game == 'play':
 
     # Check if the player wants to play again
     print('If you want to play another game type "play", if you want to exit type "exit":')
-    game = get_player_input()
+    game = check_game_end()
 
 print('Thank you for playing')
 
