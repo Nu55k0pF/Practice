@@ -50,7 +50,11 @@ int main (){
 
     map <string, int> player_choice;
 
+    // Initialize some more variables
+    string player_1, player_2;
+    string game = "play"
     
+
     
 
     return 0;
