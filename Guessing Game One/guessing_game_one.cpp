@@ -12,13 +12,56 @@ Extras:
 */
 
 #include <iostream>
+#include <string>
+#include <cstdlib>
 
 using namespace std;
 
+string check_game_end(){
+    cout << "'If you want to play another round press enter, if you want to exit type 'exit':";
+    
+}
 
 int main(){
 
-    cout << "Welcome! Lets play a guessing game.\n"
+    /*Initializing Variables*/
+
+    // Initialize the randome seed
+    srand(time(NULL));
+
+    // Set gamestate
+    string game = "play";
+
+    cout << "Welcome! Lets play a guessing game.\n";
+
+    while (game != "exit"){
+
+        // Generate a pseudorandome number
+        int random_number = rand() % 10;
+        int trys = 0;
+        int user_number;
+
+        cout << "Guess a number from 1 to 9:\n";
+        cin >> user_number;
+
+        if (user_number > random_number){
+            cout << "You guessed to high.";
+            ++trys;
+        }
+        if else ( user_number < random_number){
+            cout << "You guessed to low.";
+            ++trys;
+        }
+        if else (user_number == random_number){
+            cout << "You guessed correctly!"
+            ++trys;
+        }
+        else {
+            cout << "Please guess a number from 1 to 9."
+        }
+
+    }
+    
 
     return 0;
 }
