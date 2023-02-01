@@ -48,7 +48,7 @@ int main (){
     rps["paper"] = 2;
     rps["scissors"] = 3;
 
-    map <string, int> player_choice;
+    map <string, string> player_choice;
 
     // Initialize some more variables
     string player_1, player_2;
@@ -68,11 +68,26 @@ int main (){
         }
         else{
             cout << "That's not a valid choice. Choose between rock, paper, scissors.\n Press enter to start again";
-            
-
+            continue;
         }
 
+        cout << "Player 2: go!\n";
+        cin >> player_2;
+        if (rps.find(player_2) == rps.end()){
+            /*Do nothing*/
+        }
+        else{
+            cout << "That's not a valid choice. Choose between rock, paper, scissors.\n Press enter to start again";
+            continue;
+        }
     }
+
+    // Store the choices in a map for later use
+    player_choice[rps[player_1]] = "Player 1";
+    player_choice[rps[player_2]] = "Player 2";
+
+    // Compare inputs
+
     
 
     return 0;
