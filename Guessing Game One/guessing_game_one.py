@@ -37,12 +37,13 @@ def main():
     
     game = 'play'
 
+    randnum = random.randint(1, 9)
+    trys = 0
+
     while game != 'exit':
-        randnum = random.randint(1, 9)
 
         unum = int(input('Guess a number from 1 to 9:\n'))
 
-        trys = 0
 
         if unum > randnum:
             print('You guessed to high.')
@@ -52,7 +53,7 @@ def main():
             trys += 1
         elif unum == randnum:
             print('You geuessed correctly!')
-            trys += 1
+            break
         else:
             print('Please guess a number from 1 to 9')
 
