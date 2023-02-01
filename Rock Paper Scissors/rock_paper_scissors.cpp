@@ -20,6 +20,7 @@ https://www.codespeedy.com/dictionary-in-cpp/
 #include <iostream>
 #include <map>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -48,7 +49,7 @@ int main (){
     rps["paper"] = 2;
     rps["scissors"] = 3;
 
-    map <string, string> player_choice;
+    map <int, string> player_choice;
 
     // Initialize some more variables
     string player_1, player_2;
@@ -63,32 +64,40 @@ int main (){
         // Get player input and validate
         cout << "Player 1: go!\n";
         cin >> player_1;
-        if (rps.find(player_1) == rps.end()){
-            /*Do nothing*/
-        }
-        else{
-            cout << "That's not a valid choice. Choose between rock, paper, scissors.\n Press enter to start again";
-            continue;
-        }
-
         cout << "Player 2: go!\n";
         cin >> player_2;
-        if (rps.find(player_2) == rps.end()){
-            /*Do nothing*/
+
+        // Store the choices in a map for later use
+        player_choice[rps[player_1]] = "Player 1";
+        player_choice[rps[player_2]] = "Player 2";
+
+        // Compare inputs
+        int result = abs(rps[player_1] - rps[player_2]);
+        int winning_coice;
+
+        switch (result)
+        {
+        case 0:
+            cout << "It's a draw.\n";
+            break;
+        
+        case 1:
+            winning_coice = max(rps[player_1], rps[player_2]);
+            cout << "Congratiolations.\n";
+            cout << player_choice[winning_coice];
+            cout << " wins!\n";
+            break;
+        
+        default:
+            winning_coice = min(rps[player_1], rps[player_2]);
+            cout << "Congratiolations.\n";
+            cout << player_choice[winning_coice];
+            cout << " wins!\n";
+            break;
         }
-        else{
-            cout << "That's not a valid choice. Choose between rock, paper, scissors.\n Press enter to start again";
-            continue;
-        }
+        game = check_game_end();
     }
-
-    // Store the choices in a map for later use
-    player_choice[rps[player_1]] = "Player 1";
-    player_choice[rps[player_2]] = "Player 2";
-
-    // Compare inputs
-
-    
+    cout << "Thanks for playing.\n";
 
     return 0;
 }
