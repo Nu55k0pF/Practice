@@ -47,5 +47,5 @@ int main(){
     {
         cout << "Your numbers don't devide evenly.\n";
     }
-    
+    return 0;
 }
