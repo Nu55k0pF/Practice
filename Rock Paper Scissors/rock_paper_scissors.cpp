@@ -52,9 +52,27 @@ int main (){
 
     // Initialize some more variables
     string player_1, player_2;
-    string game = "play"
-    
+    string game = "play";
 
+    // Start of programm logic
+
+    cout << "Play a round of Rock, Paper, Scissors\n";
+
+    while (game == "play") {
+        
+        // Get player input and validate
+        cout << "Player 1: go!\n";
+        cin >> player_1;
+        if (rps.find(player_1) == rps.end()){
+            /*Do nothing*/
+        }
+        else{
+            cout << "That's not a valid choice. Choose between rock, paper, scissors.\n Press enter to start again";
+            
+
+        }
+
+    }
     
 
     return 0;
