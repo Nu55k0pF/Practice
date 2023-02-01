@@ -18,6 +18,10 @@ https://www.codespeedy.com/dictionary-in-cpp/
 // Imports
 
 #include <iostream>
+#include <map>
+#include <string>
+
+using namespace std;
 
 
 // Modules
@@ -38,4 +42,16 @@ string check_game_end(){
 
 int main (){
 
+    // Initialize maps like dicts in Python
+    map <string, int> rps;
+    rps["rock"] = 1;
+    rps["paper"] = 2;
+    rps["scissors"] = 3;
+
+    map <string, int> player_choice;
+
+    
+    
+
+    return 0;
 }
