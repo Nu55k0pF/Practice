@@ -12,7 +12,6 @@ Extras:
 */
 
 #include <iostream>
-#include <sstream>
 using namespace std;
 
 int main() {
@@ -29,8 +28,7 @@ int main() {
     cin >> number;
 
     int onehundred =  year + (100 - age);
-    string s_onehundred = to_string(onehundred);
-    string message = "Hello" + name + ", you will turn 100 in the year " + s_onehundred; 
+    string message = "Hello" + name + ", you will turn 100 in the year " + to_string(onehundred); 
     
     for(i=0; i<number; i++){
         cout << message << endl;

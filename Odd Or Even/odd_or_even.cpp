@@ -14,7 +14,6 @@ Extras:
 */
 
 #include <iostream>
-#include <sstream>
 using namespace std;
 
 int main(){
@@ -23,18 +22,17 @@ int main(){
 
     cout << "Give me a randome number.";
     cin >> u_number;
-    string u_number_str = to_string(u_number);
     
     if (u_number % 2 == 0 && u_number % 4 == 0){
-        cout << u_number_str + " is a multiple of 4.\n";
+        cout << to_string(u_number) + " is a multiple of 4.\n";
     }
     else if (u_number % 2 == 0)
     {
-       cout << u_number_str + " is an even number.\n";
+       cout << to_string(u_number) + " is an even number.\n";
     }
     else
     {
-        cout << u_number_str + " is an odd number.\n";
+        cout << to_string(u_number) + " is an odd number.\n";
     }
 
     cout << "Now give me a different number to devide:\n";
