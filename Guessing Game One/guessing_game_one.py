@@ -44,7 +44,6 @@ def main():
 
         unum = int(input('Guess a number from 1 to 9:\n'))
 
-
         if unum > randnum:
             print('You guessed to high.')
             trys += 1

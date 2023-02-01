@@ -45,13 +45,13 @@ int main(){
 
     cout << "Welcome! Lets play a guessing game.\n";
 
+    // Generate a pseudorandome number
+    int random_number = rand() % 9 + 1;
+
     // Start the game loop
     while (game != "exit"){
 
-        // Generate a pseudorandome number
-        int random_number = rand() % 9 + 1;
         int user_number;
-
         
         // Get validated user input
         while (true) {
@@ -76,7 +76,8 @@ int main(){
         }
         else if (user_number == random_number){
             cout << "You guessed correctly! ";
-            ++trys;
+            trys++;
+            break;
         }
         else {
             cout << "Please guess a number from 1 to 9.";
