@@ -20,6 +20,7 @@ I may feel like skipping the Python challange all together if I find it to easy.
 #include <vector>
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 using namespace std;
 
@@ -47,13 +48,22 @@ vector <int> vector_end(vector <int> input_vector){
 
 vector <int> create_randome_vector(int range_of_numbers, int length_of_vector){
 
-    srand
+    vector <int> output_vector;
+    
+    // Initialize seed for pseudo randome number generation
+    srand (time(NULL));
 
+    for ( length_of_vector; length_of_vector > 0; --length_of_vector){
+        output_vector.push_back(rand() % range_of_numbers + 1);
+    }
+    return output_vector;
 }
+
 
 int main(){
 
-    vector <int> a = {5, 10, 15, 20, 25};
+    // vector <int> a = {5, 10, 15, 20, 25};
+    vector <int> a = create_randome_vector(100, 2);
     vector <int> b;
     
     b = vector_end(a);
