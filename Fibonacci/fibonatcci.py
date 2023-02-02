@@ -14,12 +14,6 @@ Practice functions!
 
 # Modules
 
-def find_next_fibonatcci_number(fib_second_to_last: int, fib_last: int) -> int:
-    """ Finds the next fibonatcci number, given the previous two fibonatcci numbers. """
-
-    return fib_second_to_last + fib_last
-
-
 def generate_fibonatcci_sequence(length: int) -> list:
     """ Creates a fibonacci sequence of a given length. """
 
@@ -31,7 +25,7 @@ def generate_fibonatcci_sequence(length: int) -> list:
     elif length > 2:
         length -= 2
         while length > 0:
-            fibonacci_sequence.append(find_next_fibonatcci_number(fibonacci_sequence[-2], fibonacci_sequence[-1]))
+            fibonacci_sequence.append(fibonacci_sequence[-2], fibonacci_sequence[-1])
             length -= 1
         return fibonacci_sequence
         
