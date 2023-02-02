@@ -11,9 +11,29 @@ Extras:
 """
 
 def remove_duplicates_1(input_list: list) -> list:
-    """ Take a list and return a list without any duplicates. """
+    """ Take a list and return a list without any duplicates using sets. """
 
     output = set(input_list)
     return list(output)
 
-def remove_duplicates_2()
+
+def remove_duplicates_2(input_list: list) -> list:
+    """ Take a list and return a list without any duplicates using a for loop. """
+
+    output_list = []
+    for x in input_list:
+        if x not in output_list:
+            output_list.append(x) 
+    return output_list
+
+
+def main():
+
+    a = [1, 1, 2, 4, 5, 5]
+
+    print(remove_duplicates_1(a))
+    print(remove_duplicates_1(a))
+
+
+if __name__ == "__main__":
+    main()
