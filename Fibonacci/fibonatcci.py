@@ -25,15 +25,15 @@ def generate_fibonatcci_sequence(length: int) -> list:
     elif length > 2:
         length -= 2
         while length > 0:
-            fibonacci_sequence.append(fibonacci_sequence[-2], fibonacci_sequence[-1])
+            fibonacci_sequence.append(fibonacci_sequence[-2] + fibonacci_sequence[-1])
             length -= 1
         return fibonacci_sequence
         
 
 def main ():
     
-    a = 10
-    print(generate_fibonatcci_sequence(a))
+    user_input = int(input("How many Fibonatcci numbers do you want to generate?\n"))
+    print(generate_fibonatcci_sequence(user_input))
 
 
 if __name__ == "__main__":
