@@ -12,9 +12,6 @@ Practice functions!
 """
 
 
-# Imports
-
-
 # Modules
 
 def find_next_fibonatcci_number(fib_second_to_last: int, fib_last: int) -> int:
@@ -43,6 +40,7 @@ def main ():
     
     a = 10
     print(generate_fibonatcci_sequence(a))
+
 
 if __name__ == "__main__":
     main()
