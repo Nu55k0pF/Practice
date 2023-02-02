@@ -18,10 +18,23 @@ Practice functions!
 # Modules
 
 def find_next_fibonatcci_number(fib_second_to_last: int, fib_last: int) -> int:
-    """ Add docstring later """
+    """ Finds the next fibonatcci number, given the previous two fibonatcci numbers. """
 
     return fib_second_to_last + fib_last
-    
+
+
+def generate_fibonatcci_sequence(length: int) -> list:
+    """ Creates a fibonacci sequence of a given length. """
+
+    fibonacci_sequence = [1, 1] # Sequence must be initialiced for edge cases like length 1 or 2.
+    if length == 1:
+        return fibonacci_sequence[:0] # Edecase if length = 1
+    elif length == 2:
+        return fibonacci_sequence[:1] # Edge case if length = 2
+    elif length > 2:
+        for i in range
+
+        return fibonacci_sequence 
 
 def main ():
     a = 2
