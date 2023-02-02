@@ -13,7 +13,31 @@ I may feel like skipping the Python challange all together if I find it to easy.
 */
 
 
+// Imports
+
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+// Modules
+
+vector <int> vector_end(vector <int> input_vector){
+    
+}
+
 
 int main(){
+
+    vector <int> a (5, 10, 15, 20, 25);
+    vector <int> b;
+    
+    b = vector_end(a);
+
+    for(int i : b){
+        cout << i << endl;
+    }
+
+    return 0;
 
 }
