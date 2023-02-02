@@ -28,20 +28,21 @@ def generate_fibonatcci_sequence(length: int) -> list:
 
     fibonacci_sequence = [1, 1] # Sequence must be initialiced for edge cases like length 1 or 2.
     if length == 1:
-        return fibonacci_sequence[:0] # Edecase if length = 1
+        return fibonacci_sequence[:1] # Edecase if length = 1
     elif length == 2:
-        return fibonacci_sequence[:1] # Edge case if length = 2
+        return fibonacci_sequence[:2] # Edge case if length = 2
     elif length > 2:
-        for i in range
-
-        return fibonacci_sequence 
+        length -= 2
+        while length > 0:
+            fibonacci_sequence.append(find_next_fibonatcci_number(fibonacci_sequence[-2], fibonacci_sequence[-1]))
+            length -= 1
+        return fibonacci_sequence
+        
 
 def main ():
-    a = 2
-    b = 3
-
-    print(find_next_fibonatcci_number (a, b))
-
+    
+    a = 10
+    print(generate_fibonatcci_sequence(a))
 
 if __name__ == "__main__":
     main()
