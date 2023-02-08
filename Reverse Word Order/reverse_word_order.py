@@ -13,8 +13,11 @@ Then I would see the string:
 shown back to me.
 """
 
+# Modules
+
 def reverse_string_1(string_to_reverse: str) -> str:
     """ Takes a string and reverses it. """
+
     reversed_wordorder = []
     for word in string_to_reverse.split():
         reversed_wordorder.append(word)
@@ -23,16 +26,17 @@ def reverse_string_1(string_to_reverse: str) -> str:
 
 def reverse_string_2(string_to_reverse: str) -> str:
     """ Takes a string and reverses it. """
+
     word_list = string_to_reverse.split()
     word_list.reverse()
     return " ".join(word_list)
 
 
 def main():
+
     teststring = "My name is Michele"
 
     print(reverse_string_1(teststring))
-    
     print(reverse_string_2(teststring))
 
 
