@@ -37,4 +37,37 @@ vector <int> create_randome_vector(int range_of_numbers, int length_of_vector){
     return output_vector;
 }
 
+/**
+ * Implementes a function to split strings like pythons string.split() method
+ * 
+ * Parameters:
+ * ___________
+ * string_to_split is the string to be split
+ * delimiter: is the delimiting chararchter by which to split
+ * 
+ * Returns:
+ * A vecotr that contains all the strings as seperat entrys split by the delimiter
+ *  
+ * https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+ * 
+ */
+
+vector <string> split (string string_to_split, string delimiter)
+{
+    vector <string> split_string;
+    size_t pos = 0;
+    string token;
+    
+    while ((pos = string_to_split.find(delimiter)) != string::npos) 
+    {
+        token = string_to_split.substr(0, pos);
+        split_string.push_back(token);
+        string_to_split.erase(0, pos + delimiter.length());
+    }
+    split_string.push_back(string_to_split);
+
+    return split_string;
+}
+
+
 #endif
