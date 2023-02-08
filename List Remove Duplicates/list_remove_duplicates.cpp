@@ -33,6 +33,11 @@ vector <int> remove_duplicates_2(vector <int> input_vector)
     vector <int> output_vector;
     for (int i : input_vector)
     {
+        if (find(input_vector.begin(), input_vector.end(), i) != i)
+        {
+            output_vector.push_back(i);
+        }
+        else{}
     }
     return output_vector;
 }
