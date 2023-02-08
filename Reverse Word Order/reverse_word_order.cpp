@@ -15,24 +15,57 @@ shown back to me.
 
 #include <string>
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 
-string reverse_string(string string_to_reverse)
+vector <string> split (string string_to_split, string delimiter)
 {
-    string reversed_string (string_to_reverse.rbegin(), string_to_reverse.rend());
-    return reversed_string;
+    vector <string> split_string;
+    size_t pos = 0;
+    string token;
+    
+    while ((pos = string_to_split.find(delimiter)) != string::npos) 
+    {
+        token = string_to_split.substr(0, pos);
+        split_string.push_back(token);
+        string_to_split.erase(0, pos + delimiter.length());
+    }
+    split_string.push_back(string_to_split);
+
+    return split_string;
 }
+
+// string reverse_string(vector <string> vector_to_reverse)
+// {
+//     string rev_string;
+//     int index = vector_to_reverse.size();
+//     for (index; index != 0; index--)
+//     {
+//         cout << vector_to_reverse[index];
+//         //rev_string.append(vector_to_reverse[index]);
+//         // rev_string.append(" ");
+//     }
+//     return rev_string;
+// }
 
 
 int main()
 {
     string test_string = {"My name is Michele"};
-    string rev_string = reverse_string(test_string);
+    string delimiter = {" "};
 
-    cout << rev_string; 
+    vector <string> test_vector = split(test_string, delimiter);
+    reverse(test_vector.rbegin(), test_vector.rend());
 
+    for (string word : test_vector)
+    {
+        cout << word << " ";
+    }
+
+    
     return 0;
 }
 /*
