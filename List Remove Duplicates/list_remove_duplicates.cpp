@@ -28,20 +28,6 @@ vector <int> remove_duplicates_1(vector <int> input_vector)
     return output_vector;
 }
 
-vector <int> remove_duplicates_2(vector <int> input_vector)
-{
-    vector <int> output_vector;
-    for (int i : input_vector)
-    {
-        if (find(input_vector.begin(), input_vector.end(), i) != i)
-        {
-            output_vector.push_back(i);
-        }
-        else{}
-    }
-    return output_vector;
-}
-
 void print_vector (vector <int> vector_2_print)
 {
     for (int i : vector_2_print)
@@ -54,10 +40,8 @@ int main()
 {
     vector <int> a = {1, 1, 2, 4, 5, 5};
     vector <int> b (remove_duplicates_1(a));
-    vector <int> c (remove_duplicates_2(a));
 
     print_vector(b);
-    print_vector(c);
 
     return 0;
 }
