@@ -24,8 +24,8 @@ import string
 
 # Modules
 
-def set_charachter_pool(level: int) -> list:
-
+def set_charachter_pool(*, level: int) -> str:
+    """ Utility function to returnn the apropriate char set for the generate password function. """
     group_1 = string.ascii_lowercase
     group_2 = string.ascii_uppercase
     group_3 = string.digits
@@ -33,13 +33,13 @@ def set_charachter_pool(level: int) -> list:
 
     char_set = [group_1, group_2, group_3, group_4]
 
+    return "".join(char_set[:level])
     
 
-
-def generate_password(strenght: int, length: int) -> str:
+def generate_password(*, strenght: int, length: int) -> str:
     """ Generates a pseudo random password of the chosen length and strength. """
     
-    charachter_pool = []
+    charachter_pool = set_charachter_pool(level=strenght)
     passord = []
 
     for i in range(length):
@@ -47,9 +47,10 @@ def generate_password(strenght: int, length: int) -> str:
 
     return "".join(passord)
 
+
 def main():
 
-    generate_password(strenght=1, length=10)
+    print(generate_password(strenght=4, length=10))
 
 
 # Constants
