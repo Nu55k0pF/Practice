@@ -20,6 +20,7 @@ Extra:
 
 import random
 import string
+import argparse
 
 
 # Modules
@@ -36,7 +37,7 @@ def set_charachter_pool(*, level: int) -> str:
     return "".join(char_set[:level])
     
 
-def generate_password(*, strenght: int, length: int) -> str:
+def generate_password(*, strenght: int=1, length: int=8) -> str:
     """ Generates a pseudo random password of the chosen length and strength. """
     
     charachter_pool = set_charachter_pool(level=strenght)
@@ -50,13 +51,25 @@ def generate_password(*, strenght: int, length: int) -> str:
 
 def main():
 
-    print(generate_password(strenght=4, length=10))
+    # Setting up argparser
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-l",
+        "--length",
+        help="Set length of password.")
+    parser.add_argument(
+        "-s",
+        "--strength",
+        help="1 = only lowercase letters, 2 = lower and uppercase letters, 3 = digits, lower and upper case, 4 = adds punctuation.")
+    args = parser.parse_args()
 
-
-# Constants
-
-
-
+    # Passwort generation
+    if args.strength and args.length is not None:
+        pw_strength = int(args.strength)    
+        pw_length = int(args.length)
+        print(generate_password(strenght=pw_strength, length=pw_length))
+    else:
+        print("Usage example:\n\npassword_generator.py -l 10 -s 4")
 
 if __name__ == "__main__":
     main()
