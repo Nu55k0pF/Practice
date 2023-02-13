@@ -24,10 +24,6 @@ import argparse
 
 # Constants
 
-GROUP_1 = string.ascii_lowercase
-GROUP_2 = string.ascii_uppercase
-GROUP_3 = string.digits
-GROUP_4 = string.punctuation
 
 
 # Modules
@@ -50,14 +46,16 @@ class Password:
         passord = []
         for i in range(cls.length):
             passord.append(random.choice(charachter_pool))
-
         return "".join(passord)
 
 
     def set_charachter_pool(self) -> str:
         """ Utility function to returnn the apropriate char set for the generate password function. """
         
-        char_set = [GROUP_1, GROUP_2, GROUP_3, GROUP_4]
+        char_set = [string.ascii_lowercase,
+                    string.ascii_uppercase, 
+                    string.digits,
+                    string.punctuation]
 
         return "".join(char_set[:self.strength])
     
@@ -66,8 +64,28 @@ class Password:
 
 def main():
 
-    pw = Password(4,4)
-    print(pw)
+    # Setting up argparser
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-l",
+        "--length",
+        help="Set length of password.")
+    parser.add_argument(
+        "-s",
+        "--strength",
+        help="1 = only lowercase letters, 2 = lower and uppercase letters, 3 = digits, lower and upper case, 4 = adds punctuation.")
+    args = parser.parse_args()
+
+    # Passwort generation
+    if args.strength and args.length is not None:
+        pw_strength = int(args.strength)    
+        pw_length = int(args.length)
+        
+        pw = Password(strength=pw_strength, length=pw_length)
+        print(pw)
+
+    else:
+        print("Usage example:\n\pw_gen_alternative.py -l 10 -s 4")
 
 
 if __name__ == "__main__":

@@ -26,6 +26,7 @@ import argparse
 
 def set_charachter_pool(*, level: int) -> str:
     """ Utility function to returnn the apropriate char set for the generate password function. """
+   
     group_1 = string.ascii_lowercase
     group_2 = string.ascii_uppercase
     group_3 = string.digits
