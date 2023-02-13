@@ -69,5 +69,5 @@ int main()
     return 0;
 }
 /*
-TODO: This reverses the full string not the word order! 
+TODO: Make a function that acctually returns the reversed string and not just prints it out
 */
