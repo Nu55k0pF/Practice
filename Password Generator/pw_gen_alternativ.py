@@ -22,32 +22,45 @@ import string
 import argparse
 
 
+# Constants
+
+
+
 # Modules
 
-def set_charachter_pool(*, level: int) -> str:
-    """ Utility function to returnn the apropriate char set for the generate password function. """
-   
-    group_1 = string.ascii_lowercase
-    group_2 = string.ascii_uppercase
-    group_3 = string.digits
-    group_4 = string.punctuation
+class Password:
+    def __init__(self, length: int, strength: int ) -> None:
+        self.length = length
+        self.strength = strength
+        self.password_string = self.pw_generate()
 
-    char_set = [group_1, group_2, group_3, group_4]
 
-    return "".join(char_set[:level])
+    def __repr__(self) -> str:
+        return self.password_string
+
+
+    def pw_generate(cls) -> str:
+        """ Generates a pseudo random password of the chosen length and strength. """
+    
+        charachter_pool = cls.set_charachter_pool()
+        passord = []
+        for i in range(cls.length):
+            passord.append(random.choice(charachter_pool))
+        return "".join(passord)
+
+
+    def set_charachter_pool(self) -> str:
+        """ Utility function to returnn the apropriate char set for the generate password function. """
+        
+        char_set = [string.ascii_lowercase,
+                    string.ascii_uppercase, 
+                    string.digits,
+                    string.punctuation]
+
+        return "".join(char_set[:self.strength])
     
 
-def generate_password(*, strenght: int=1, length: int=8) -> str:
-    """ Generates a pseudo random password of the chosen length and strength. """
-    
-    charachter_pool = set_charachter_pool(level=strenght)
-    passord = []
-
-    for i in range(length):
-        passord.append(random.choice(charachter_pool))
-
-    return "".join(passord)
-
+# Main functionality
 
 def main():
 
@@ -67,9 +80,14 @@ def main():
     if args.strength and args.length is not None:
         pw_strength = int(args.strength)    
         pw_length = int(args.length)
-        print(generate_password(strenght=pw_strength, length=pw_length))
+        
+        pw = Password(strength=pw_strength, length=pw_length)
+        print(pw)
+
     else:
-        print("Usage example:\n\npassword_generator.py -l 10 -s 4")
+        print("Usage example:\n\pw_gen_alternative.py -l 10 -s 4")
+
 
 if __name__ == "__main__":
+
     main()
