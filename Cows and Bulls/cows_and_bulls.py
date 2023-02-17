@@ -26,20 +26,58 @@ import random
 
 # Modules
 
-def create_4_digit_number():
-    rand_4 = []
+def cows_and_bulls(number: list, guess: list):
+
+    cows = 0
+    bulls = 0
     i = 0
+
     while i < 4:
-        rand_4.append(str(random.randint(0,9)))
+        # if number[0] == guess[0]:
+        #     cows += 1
+        #     guess.pop(0)
+        #     number.pop(0)
+        #     i += 1
+
+        # elif guess[0] in number:
+        #     bulls += 1
+        #     guess.pop(0)
+        #     number.pop(number.index(guess[0]))
+        #     i += 1
+
+        # else:
+        #     guess.pop(0)
+        #     i += 1
+        print(number[0], guess[0])
+        number.pop(0)
+        guess.pop(0)
         i += 1
 
-    return rand_4
+    return cows, bulls
 
 # Main
 
 def main():
 
-    print(" ".join(create_4_digit_number()))
+    number = list(str(random.randint(1000,9999)))
+    game = 1
+    trys = 0
+    
+    print(
+        "Welcome to the cows and bulls game. For every digit that you guessed correctly in the correct place, you have a “cow”.\n"
+        "For every digit the user guessed correctly in the wrong place is a “bull.” ")
+        
+    while game:
+        guess = list(str(input("Make your Guess:\n")))
+        trys += 1
+        cows, bulls = cows_and_bulls(number, guess)
+        print("{} cows, {} bulls.".format(cows, bulls))
+        if cows == 4:
+            game = 0
+        
+    
+    print("Thanks for playing. You guessed {} times".format(trys))
+
 
 if __name__ == "__main__":
     main()
