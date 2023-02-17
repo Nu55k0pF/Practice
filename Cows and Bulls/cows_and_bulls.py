@@ -33,41 +33,41 @@ def cows_and_bulls(number: list, guess: list):
     i = 0
 
     while i < 4:
-        # if number[0] == guess[0]:
-        #     cows += 1
-        #     guess.pop(0)
-        #     number.pop(0)
-        #     i += 1
+        if number[i] == guess[i]:
+            cows += 1
+            number[i] = "x"
+            i += 1
+        else:
+            i += 1
 
-        # elif guess[0] in number:
-        #     bulls += 1
-        #     guess.pop(0)
-        #     number.pop(number.index(guess[0]))
-        #     i += 1
-
-        # else:
-        #     guess.pop(0)
-        #     i += 1
-        print(number[0], guess[0])
-        number.pop(0)
-        guess.pop(0)
-        i += 1
-
+    i = 0
+    
+    while i < 4:
+        if guess[i] in number:
+            bulls += 1
+            number[number.index(guess[i])] = "x"
+            i += 1
+        else:
+            i += 1
+   
     return cows, bulls
+
 
 # Main
 
 def main():
 
-    number = list(str(random.randint(1000,9999)))
+    
     game = 1
     trys = 0
+    number = list(str(random.randint(1000,9999)))
     
     print(
         "Welcome to the cows and bulls game. For every digit that you guessed correctly in the correct place, you have a “cow”.\n"
         "For every digit the user guessed correctly in the wrong place is a “bull.” ")
         
     while game:
+        print(number)
         guess = list(str(input("Make your Guess:\n")))
         trys += 1
         cows, bulls = cows_and_bulls(number, guess)
