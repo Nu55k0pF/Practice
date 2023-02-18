@@ -33,7 +33,7 @@ def create_randome_list(size):
     return random.sample(pool, k=sample_size)
 
 
-def search_element(sample: list, subject: int) -> bool:
+def search_element(ordered_list: list, subject: int) -> bool:
     '''
     Search a list for the subject. Return True or False accordingly
 
@@ -42,13 +42,13 @@ def search_element(sample: list, subject: int) -> bool:
     sample: the list to sort through
     subject: the item to look for in the list
 
-    Returns:
+        Returns:
     Bool
     '''
     
     is_in_list = False
 
-    for i in sample:
+    for i in ordered_list:
         if i == subject:
             is_in_list = True
             return is_in_list
@@ -58,13 +58,13 @@ def search_element(sample: list, subject: int) -> bool:
     return is_in_list
     
 
-def binary_search_element(sample: list, subject: int) -> bool:
+def binary_search_element(oderderd_list: list, subject: int) -> bool:
     '''
-    Search a list for the subject. Implemented as a binary search algorithem. Return True or False accordingly.
+    Search a list for the subject number. Implemented as a binary search algorithem. Return True or False accordingly.
 
     Parameters:
     ____
-    sample: the list to sort through
+    sample: the list to sort through. The list must be an orderd list.
     subject: the item to look for in the list
 
     Returns:
@@ -74,7 +74,7 @@ def binary_search_element(sample: list, subject: int) -> bool:
     is_in_list = False
 
     # Copy the list in case its needed for something else.
-    temp = sample.copy()
+    temp = oderderd_list.copy()
 
     # The loop will half the list every iteration, when there is only one element left, stop.
     while len(temp) > 1:
