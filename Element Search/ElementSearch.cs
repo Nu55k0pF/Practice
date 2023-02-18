@@ -15,20 +15,37 @@ namespace ElementSearch
 {
     class ElementSearch
     {
-        static List<int> searchElement(List orderdList, int subject)
+        static bool searchElement(List<int> orderdList, int subject)
         {
+            bool isInList = false;
+            
             for (int i = 0; i < orderdList.Count; i++)
             {
-
+                if (orderdList[i] == subject)
+                {
+                    isInList = true;
+                }
+                else
+                {
+                    continue;
+                }
             }
+            return isInList;
         }
         
         static void Main(string[] args)
         {
             //Create a list of ints
-            List<int> l = new List<int>() {1, 2, 5, 6, 9, 10, 12, 15, 61, 73, 94, 110};
-            int num = 1;
-            Console.WriteLine(l);
+            List<int> l = new List<int> (new int[] {1, 2, 5, 6, 9, 10, 12, 15, 61, 73, 94, 110});
+            int num = 42;
+            foreach (int aNum in l)
+            {
+            Console.Write(aNum + ", ");
+            }
+            Console.WriteLine(num);
+
+            bool resutl = searchElement(l, num);
+            Console.WriteLine(resutl);
         }
     }
 

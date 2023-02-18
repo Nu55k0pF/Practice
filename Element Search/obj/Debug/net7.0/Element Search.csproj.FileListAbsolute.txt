@@ -1,0 +1,15 @@
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.csproj.AssemblyReference.cache
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.AssemblyInfoInputs.cache
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.AssemblyInfo.cs
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.csproj.CoreCompileInputs.cache
+C:\Users\Schnurri\Code\Practice\Element Search\bin\Debug\net7.0\Element Search.exe
+C:\Users\Schnurri\Code\Practice\Element Search\bin\Debug\net7.0\Element Search.deps.json
+C:\Users\Schnurri\Code\Practice\Element Search\bin\Debug\net7.0\Element Search.runtimeconfig.json
+C:\Users\Schnurri\Code\Practice\Element Search\bin\Debug\net7.0\Element Search.dll
+C:\Users\Schnurri\Code\Practice\Element Search\bin\Debug\net7.0\Element Search.pdb
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.dll
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\refint\Element Search.dll
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.pdb
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\Element Search.genruntimeconfig.cache
+C:\Users\Schnurri\Code\Practice\Element Search\obj\Debug\net7.0\ref\Element Search.dll
