@@ -13,6 +13,7 @@ Extras:
     If not, print a different appropriate message.
 '''
 
+# Ask the user for input
 u_number = int(input("Give me a randome number. "))
 
 if u_number % 2 == 0 and u_number % 4 == 0:
