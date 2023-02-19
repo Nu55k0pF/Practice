@@ -1,0 +1,15 @@
+C:\Users\Schnurri\Code\Practice\Odd Or Even\bin\Debug\net7.0\Odd Or Even.exe
+C:\Users\Schnurri\Code\Practice\Odd Or Even\bin\Debug\net7.0\Odd Or Even.deps.json
+C:\Users\Schnurri\Code\Practice\Odd Or Even\bin\Debug\net7.0\Odd Or Even.runtimeconfig.json
+C:\Users\Schnurri\Code\Practice\Odd Or Even\bin\Debug\net7.0\Odd Or Even.dll
+C:\Users\Schnurri\Code\Practice\Odd Or Even\bin\Debug\net7.0\Odd Or Even.pdb
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.csproj.AssemblyReference.cache
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.AssemblyInfoInputs.cache
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.AssemblyInfo.cs
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.csproj.CoreCompileInputs.cache
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.dll
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\refint\Odd Or Even.dll
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.pdb
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\Odd Or Even.genruntimeconfig.cache
+C:\Users\Schnurri\Code\Practice\Odd Or Even\obj\Debug\net7.0\ref\Odd Or Even.dll
