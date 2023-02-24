@@ -25,15 +25,20 @@ Hint: this requires some use of functions, as were discussed previously on this 
 # Modules
 
 def darw_game_board(length: int) -> str:
-    horizontal_line = " ---"
-    vertical_line = "|   "
-    horizontal_end = " \n"
-    vertical_end = "|\n"
+    for i in range(length):
+        print(draw_horizontal_line(length))
+        print(draw_vertical_line(length))
+    print(draw_horizontal_line(length))
 
-    line = (horizontal_line*length + horizontal_end) + (vertical_line*length + vertical_end)
-    board = line* length + (horizontal_line*length + horizontal_end)
 
-    print(board)
+def draw_horizontal_line(length: int) -> str:
+    line = " ---" * length
+    return line
+
+
+def draw_vertical_line(length: int) -> str:
+    line = "|   " * length + "|"
+    return line
 
 
 # Script
