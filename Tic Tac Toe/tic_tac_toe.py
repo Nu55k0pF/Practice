@@ -44,66 +44,101 @@ also_no_winner = [[1, 2, 0],
 
 # Modules
 
-def is_win(row: list):
+def winner_is(row: list) -> int:
     if len(set(row)) == 1 and 0 not in set(row):
-        print("the winner is player {}".format(row[0]))
+        return row[0]
     else:
-        pass
+        return 0
+
+def check_grid(grid: list) -> int:
+
+    winner = 0
+    while not winner:
+        # Check if any row has a win condition
+        for list in grid:
+            winner = winner_is(list)
+
+        # Check if any column has a win condition
+        y = 0
+
+        while y < len(grid):
+            temp = []
+            x = 0
+            while x < len(grid):
+                temp.append(grid[x][y])
+
+                x += 1
+            winner = winner_is(temp)
+            y += 1
+
+        # Check Diagonal 1
+        y = 0 
+        x = 0
+        temp =[]
+
+        while y < len(grid):
+            
+            temp.append(grid[x][y])
+            x += 1 
+            y += 1
+
+        winner = winner_is(temp)
+
+        # Check Diagonal 2
+        y = 2 
+        x = 0
+        temp =[]    
+        
+        while x < len(grid):
+            
+            temp.append(grid[x][y])
+            x += 1
+            y -= 1
+
+        winner = winner_is(temp)
+        
+        if winner == 0:
+            break
+    
+    return winner
 
 
 # Script
 
 def main():
 
-    # Initialize game state
-    game =[
+    # Games to test
+
+    winner_is_2 = [
         [2, 2, 0],
+	    [2, 1, 0],
+	    [2, 1, 1]]
+
+    winner_is_1 = [
+        [1, 2, 0],
+	    [2, 1, 0],
+	    [2, 1, 1]]
+
+    winner_is_also_1 = [
+        [0, 1, 0],
+	    [2, 1, 0],
+	    [2, 1, 1]]  
+
+    no_winner = [
+        [1, 2, 0],
+	    [2, 1, 0],
+	    [2, 1, 2]]
+
+    also_no_winner = [
+        [1, 2, 0],
         [2, 1, 0],
-        [2, 1, 1]]
+        [2, 1, 0]]      
 
-    # Check if any row has a win condition
-    for list in game:
-        is_win(list)
+    print(check_grid(winner_is_2))
+    print(check_grid(winner_is_1))
+    print(check_grid(winner_is_also_1))
+    print(check_grid(no_winner))
+    print(check_grid(also_no_winner))
 
-    # Check if any column has a win condition
-    y = 0
-
-    while y < len(game):
-        temp = []
-        x = 0
-        while x < len(game):
-            temp.append(game[x][y])
-
-            x += 1
-        is_win(temp)
-        y += 1
-
-    # Check Diagonal 1
-    y = 0 
-    x = 0
-    temp =[]
-
-    while y < len(game):
-        
-        temp.append(game[x][y])
-        x += 1 
-        y += 1
-
-    is_win(temp)
-
-    # Check Diagonal 2
-    y = 2 
-    x = 0
-    temp =[]    
-    
-    while x < len(game):
-        
-        temp.append(game[x][y])
-        x += 1
-        y -= 1
-
-    is_win(temp)
-    
-    
 if __name__ == "__main__":
     main()
