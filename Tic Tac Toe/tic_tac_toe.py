@@ -44,5 +44,66 @@ also_no_winner = [[1, 2, 0],
 
 # Modules
 
+def is_win(row: list):
+    if len(set(row)) == 1 and 0 not in set(row):
+        print("the winner is player {}".format(row[0]))
+    else:
+        pass
+
 
 # Script
+
+def main():
+
+    # Initialize game state
+    game =[
+        [2, 2, 0],
+        [2, 1, 0],
+        [2, 1, 1]]
+
+    # Check if any row has a win condition
+    for list in game:
+        is_win(list)
+
+    # Check if any column has a win condition
+    y = 0
+
+    while y < len(game):
+        temp = []
+        x = 0
+        while x < len(game):
+            temp.append(game[x][y])
+
+            x += 1
+        is_win(temp)
+        y += 1
+
+    # Check Diagonal 1
+    y = 0 
+    x = 0
+    temp =[]
+
+    while y < len(game):
+        
+        temp.append(game[x][y])
+        x += 1 
+        y += 1
+
+    is_win(temp)
+
+    # Check Diagonal 2
+    y = 2 
+    x = 0
+    temp =[]    
+    
+    while x < len(game):
+        
+        temp.append(game[x][y])
+        x += 1
+        y -= 1
+
+    is_win(temp)
+    
+    
+if __name__ == "__main__":
+    main()
