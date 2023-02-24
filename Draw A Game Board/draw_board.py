@@ -24,6 +24,25 @@ Hint: this requires some use of functions, as were discussed previously on this 
 
 # Modules
 
+def darw_game_board(length: int) -> str:
+    horizontal_line = " ---"
+    vertical_line = "|   "
+    horizontal_end = " \n"
+    vertical_end = "|\n"
+
+    line = (horizontal_line*length + horizontal_end) + (vertical_line*length + vertical_end)
+    board = line* length + (horizontal_line*length + horizontal_end)
+
+    print(board)
+
 
 # Script
 
+def main():
+    
+    board_size = int(input("How large of a game board do you want?\n"))
+    darw_game_board(board_size)
+
+
+if __name__ == "__main__":
+    main()
