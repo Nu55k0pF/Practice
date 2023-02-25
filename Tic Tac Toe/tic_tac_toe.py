@@ -50,58 +50,85 @@ def winner_is(row: list) -> int:
     else:
         return 0
 
-def check_grid(grid: list) -> int:
 
-    winner = 0
-    while not winner:
-        # Check if any row has a win condition
-        for list in grid:
-            winner = winner_is(list)
-
-        # Check if any column has a win condition
-        y = 0
-
-        while y < len(grid):
-            temp = []
-            x = 0
-            while x < len(grid):
-                temp.append(grid[x][y])
-
-                x += 1
-            winner = winner_is(temp)
-            y += 1
-
-        # Check Diagonal 1
-        y = 0 
-        x = 0
-        temp =[]
-
-        while y < len(grid):
+def check_rows(rows: list) -> int:
+            for list in rows:
+                winner = winner_is(list)
             
-            temp.append(grid[x][y])
-            x += 1 
-            y += 1
+            return winner
 
-        winner = winner_is(temp)
 
-        # Check Diagonal 2
-        y = 2 
+def check_columns(columns: list) -> int:
+    y = 0
+    while y < len(columns):
+        temp = []
         x = 0
-        temp =[]    
-        
-        while x < len(grid):
-            
-            temp.append(grid[x][y])
+        while x < len(columns):
+            temp.append(columns[x][y])
+
             x += 1
-            y -= 1
-
         winner = winner_is(temp)
-        
-        if winner == 0:
-            break
+        y += 1
     
     return winner
 
+
+def check_diagonale1(list_of_lists: list) -> int:
+    y = 0 
+    x = 0
+    temp =[]
+
+    while y < len(list_of_lists):
+        
+        temp.append(list_of_lists[x][y])
+        x += 1 
+        y += 1
+
+    winner = winner_is(temp)
+
+    return winner
+
+
+def check_diagonale2(list_of_lists: list) -> int:
+    y = 2 
+    x = 0
+    temp =[]    
+    
+    while x < len(list_of_lists):
+        
+        temp.append(list_of_lists[x][y])
+        x += 1
+        y -= 1
+
+    winner = winner_is(temp)
+    
+    return winner
+
+
+def check_grid(grid: list) -> int:
+
+    # Check if any row has a win condition
+    winner = check_rows(grid)
+    if winner != 0:
+        return winner
+
+    # Check if any column has a win condition
+    winner = check_columns(grid)
+    if winner != 0:
+        return winner
+
+    # Check Diagonal 1
+    winner = check_diagonale1(grid)
+    if winner != 0:
+        return winner
+
+    # Check Diagonal 2
+    winner = check_diagonale2(grid)
+    if winner != 0:
+        return winner
+    
+    return 0
+    
 
 # Script
 
